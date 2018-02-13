@@ -59,14 +59,17 @@ public class QuickSort {
         System.out.println("Сортировка 1000 элементов");
         QuickSort qs = new QuickSort(new int[1000]);
         qs.quickSort(qs.createArr(new int[1000]));
+
         System.out.println("-------------------------");
         System.out.println("Сортировка 10000 элементов");
         qs = new QuickSort(new int[10_000]);
         qs.quickSort(qs.createArr(new int[10_000]));
+
         System.out.println("-------------------------");
         System.out.println("Сортировка 100000 элементов");
         qs = new QuickSort((new int[100_000]));
         qs.quickSort(qs.createArr(new int[100_000]));
+
         System.out.println("-------------------------");
         System.out.println("Сортировка 1000000 элементов");
         qs = new QuickSort((new int[1_000_000]));
