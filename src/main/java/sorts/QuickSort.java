@@ -1,3 +1,5 @@
+package sorts;
+
 import java.util.Random;
 
 /**
@@ -20,11 +22,11 @@ public class QuickSort {
     }
 
     private void quickSort(int[] array) {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         int startIndex = 0;
         int endIndex = array.length - 1;
         doSort(startIndex, endIndex);
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
         System.out.println("Время работы: " + (end - start) + " мс");
     }
 

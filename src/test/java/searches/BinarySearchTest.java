@@ -1,15 +1,14 @@
+package searches;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Created by Dmitriy Yurkin on 08.02.2018.
- */
 class BinarySearchTest {
     @Test
     void find() {
         BinarySearch bs = new BinarySearch(null);
-        assertTrue(bs.find(7) == -1);;
+        assertTrue(bs.find(7) == -1);
 
         bs = new BinarySearch(new double[0]);
         assertTrue(bs.find(7) == -1);

@@ -1,3 +1,5 @@
+package sorts;
+
 /**
  * Created by Dmitriy Yurkin on 09.02.2018.
  */
