@@ -1,3 +1,5 @@
+package searches;
+
 /**
  * Created by Dmitriy Yurkin on 08.02.2018.
  */

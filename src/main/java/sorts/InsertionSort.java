@@ -1,13 +1,14 @@
+package sorts;
+
 import java.util.Random;
 
 /**
  * Created by Dmitriy Yurkin on 13.02.2018.
  */
-
-public class SelectionSort {
+class InsertionSort {
     private int[] array;
 
-    private SelectionSort(int[] array) {
+    private InsertionSort(int[] array) {
         this.array = array;
     }
 
@@ -20,19 +21,17 @@ public class SelectionSort {
         return array;
     }
 
-    void selectionSort(int[] array) {
+    private void sort(int arr[]) {
         long start = System.currentTimeMillis();
-        for (int k = 0; k < array.length-1; k++){
-            int min_idx = k;
-            for (int j = k + 1; j<array.length; j++){
-                if (array[j] < array[min_idx])
-                    min_idx = j;
+        int n = arr.length;
+        for (int i=1; i<n; ++i) {
+            int key = arr[i];
+            int j = i-1;
+            while (j>=0 && arr[j] > key) {
+                arr[j+1] = arr[j];
+                j = j-1;
             }
-
-            //swap
-            int temp = array[min_idx];
-            array[min_idx] = array[k];
-            array[k] = temp;
+            arr[j+1] = key;
         }
         long end = System.currentTimeMillis();
         System.out.println("Время работы: " + (end - start) + " мс");
@@ -41,22 +40,22 @@ public class SelectionSort {
     public static void main(String[] args) {
         System.out.println("-------------------------");
         System.out.println("Сортировка 1000 элементов");
-        SelectionSort ss = new SelectionSort(new int[1000]);
-        ss.selectionSort(ss.createArr(new int[1000]));
+        InsertionSort is = new InsertionSort(new int[1000]);
+        is.sort(is.createArr(new int[1000]));
 
         System.out.println("-------------------------");
         System.out.println("Сортировка 10000 элементов");
-        ss = new SelectionSort(new int[10_000]);
-        ss.selectionSort(ss.createArr(new int[10_000]));
+        is = new InsertionSort(new int[10_000]);
+        is.sort(is.createArr(new int[10_000]));
 
         System.out.println("-------------------------");
         System.out.println("Сортировка 100000 элементов");
-        ss = new SelectionSort(new int[100_000]);
-        ss.selectionSort(ss.createArr(new int[100_000]));
+        is = new InsertionSort(new int[100_000]);
+        is.sort(is.createArr(new int[100_000]));
 
         System.out.println("-------------------------");
         System.out.println("Сортировка 1000000 элементов");
-        ss = new SelectionSort(new int[1_000_000]);
-        ss.selectionSort(ss.createArr(new int[1_000_000]));
+        is = new InsertionSort(new int[1_000_000]);
+        is.sort(is.createArr(new int[1_000_000]));
     }
 }
